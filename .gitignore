@@ -1,0 +1,27 @@
+# Raw and derived data (download locally; attribute STM/ECCC in README)
+data/
+outputs/
+*.parquet
+*.csv
+
+# Python
+.venv/
+venv/
+*.egg-info/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Databricks
+.databricks/
+*.dbc
+
+# Secrets / local
+.env
+.env.local
+
+# OS / IDE
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,29 @@
+[project]
+name = "montreal-transit-intelligence"
+version = "0.1.0"
+description = "STM metro disruption analytics from open data + weather"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "matplotlib>=3.8",
+    "requests>=2.31",
+    "holidays>=0.40",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.28,<1.55"]
+dev = ["jupyter>=1.0", "ipykernel>=6.0", "pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
