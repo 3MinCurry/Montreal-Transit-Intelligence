@@ -433,12 +433,15 @@ def format_findings_document(
     reliability_factors: list[str] | None = None,
 ) -> str:
     lines = [
-        "# Montreal Transit Intelligence — Findings",
+        "# Montreal Transit Analysis — Findings",
         "",
         f"Analysis window: **{ANALYSIS_START}** through the last complete month in the dataset.",
         "",
-        "Descriptive analytics only — correlations and associations, **not causation**.",
-        "Not an official STM product.",
+        (
+            "**Personal project for curiosity and fun** — descriptive analytics only; "
+            "correlations and associations, **not causation**. "
+            "Not affiliated with STM and not for operational use."
+        ),
         "",
         (
             "This report frames **STM metro reliability** as a multi-factor question: "

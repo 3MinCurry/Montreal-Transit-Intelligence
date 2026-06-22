@@ -304,7 +304,8 @@ def main() -> None:
     st.title("Montreal Transit Intelligence")
     st.caption(
         "STM metro train incidents (2019+) — explore, test significance, and track a "
-        "custom reliability index. Not an official STM product."
+        "custom reliability index. Personal side project for curiosity and fun; "
+        "not affiliated with STM or meant as operational guidance."
     )
 
     frames = _load_frames()

@@ -2,6 +2,8 @@
 
 **STM metro disruption analytics from open data + weather**
 
+*A personal side project — built out of curiosity and for fun. Not affiliated with STM, not operational advice, and not an official product.*
+
 ---
 
 ## Problem
@@ -10,7 +12,7 @@ Montreal STM riders experience metro delays, but it is hard to see **patterns** 
 
 **Research question:** What factors are associated with **STM metro reliability** — **weather**, **calendar context**, **incident cause**, and **operations** patterns (2019+ train disruptions)?
 
-This project joins those sources into a reproducible analytics pipeline and documents findings with honest **association, not causation** language. Not an official STM product.
+This project joins those sources into a reproducible analytics pipeline and documents findings with honest **association, not causation** language.
 
 ---
 
