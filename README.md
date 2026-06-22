@@ -4,6 +4,8 @@
 
 *A personal side project — built out of curiosity and for fun. Not affiliated with STM, not operational advice, and not an official product.*
 
+Analyzed **29,167** STM metro train incidents from **2019–2025** alongside weather, holiday, event, and rider-experience datasets.
+
 ---
 
 ## Problem
@@ -63,6 +65,24 @@ flowchart TB
 ```
 
 **Runs on:** local Python (pandas) and **Databricks Free Edition** (PySpark + Unity Catalog Volumes + Delta).
+
+## Why Databricks?
+
+The project was intentionally implemented using a **lakehouse** architecture with **Delta Lake** tables and **Bronze → Silver → Gold** layers — not because the dataset requires a cluster, but to demonstrate a reproducible data-engineering workflow:
+
+- **Bronze** — raw STM and weather CSVs landed unchanged  
+- **Silver** — cleaned types, parsed timestamps, weather flags  
+- **Gold** — daily fact tables for incidents, lines, and weather joins  
+- **Analytics** — shared `src/mti/` logic runs on gold outputs locally (pandas) or on Databricks (PySpark + pandas)
+
+Same findings either path; Databricks shows the ELT story for a portfolio. Setup: [`docs/DATABRICKS_SETUP.md`](docs/DATABRICKS_SETUP.md).
+
+## Engineering takeaways
+
+- Built Delta Lake Bronze/Silver/Gold pipelines on Databricks  
+- Implemented data quality validation gates  
+- Designed reproducible analytics workflows across local pandas and PySpark  
+- Applied bootstrap confidence intervals and permutation testing  
 
 ---
 
@@ -126,6 +146,10 @@ Full report: [`FINDINGS.md`](FINDINGS.md)
 |--------|----------|------|
 | STM metro incidents | 2019+ train (`T`) events | [donnees.montreal.ca](https://donnees.montreal.ca/en/dataset/incidents-du-reseau-du-metro) |
 | Weather YUL (station 51157) | Daily temps, precip, snow | [GeoMet API](https://api.weather.gc.ca/collections/climate-daily/items?STN_ID=51157) |
+| Quebec holidays & major events | Curated Montreal calendar windows | `src/mti/calendar_enrichment.py` |
+| Canadiens home games | NHL schedule (Bell Centre proxy) | `scripts/download_canadiens_schedule.py` |
+| Montreal 311 | Daily Requête + Plainte counts | `scripts/download_311.py` |
+| STM published experience | Yearly customer-experience % (reference) | `data/reference/stm_experience_yearly.csv` |
 
 ---
 
