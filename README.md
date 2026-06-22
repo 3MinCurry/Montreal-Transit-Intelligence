@@ -2,6 +2,8 @@
 
 **STM metro disruption analytics from open data + weather**
 
+**Repository:** [github.com/3MinCurry/montreal-transit-intelligence](https://github.com/3MinCurry/montreal-transit-intelligence)
+
 *A personal side project — built out of curiosity and for fun. Not affiliated with STM, not operational advice, and not an official product.*
 
 Analyzed **29,167** STM metro train incidents from **2019–2025** alongside weather, holiday, event, and rider-experience datasets.
