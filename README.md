@@ -1,4 +1,4 @@
-# Montreal Transit Analysis
+# Montreal Transit Intelligence
 
 **STM metro disruption analytics from open data + weather**
 
