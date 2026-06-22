@@ -6,6 +6,10 @@
 
 Analyzed **29,167** STM metro train incidents from **2019–2025** alongside weather, holiday, event, and rider-experience datasets.
 
+## Project scope
+
+This project focuses exclusively on **STM metro train incidents** (`Type = T`) from the **Green, Orange, Blue, and Yellow** lines. Bus operations, REM, Exo, and station-only incidents are intentionally excluded.
+
 ---
 
 ## Problem
